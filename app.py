@@ -6,8 +6,6 @@ from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, PromptHelper
 import openai
 
 
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = "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"
 documents = SimpleDirectoryReader('./data').load_data()
 
 # define LLM

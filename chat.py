@@ -10,8 +10,7 @@ import os
 
 
 def generate_response(index,user_input):
-    os.environ["OPENAI_API_KEY"] = "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"
-    openai.api_key = "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"
+
     # documents = SimpleDirectoryReader('./data').load_data()
     # index = GPTVectorStoreIndex(documents)
 
