@@ -351,7 +351,7 @@ header .follow a:hover{
     width:80%;
 }
 .about .row-2 .box-container{
-    flex:1 1 40rem;
+    flex:1 1 100rem;
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
