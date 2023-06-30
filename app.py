@@ -5,9 +5,7 @@ from chat import generate_response
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, PromptHelper, LLMPredictor
 import openai
 
-# Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+
 documents = SimpleDirectoryReader('./data').load_data()
 
 app = Flask(__name__)
