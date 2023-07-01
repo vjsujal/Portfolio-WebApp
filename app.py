@@ -6,9 +6,6 @@ from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, PromptHelper
 import openai
 import threading
 
-# Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 documents = SimpleDirectoryReader('./data').load_data()
 
