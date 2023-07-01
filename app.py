@@ -1,10 +1,14 @@
 import os
 from flask import Flask, render_template, request, jsonify
-from langchain import OpenAI
+from langchain.chat_models import ChatOpenAI
 from chat import generate_response
 from llama_index import GPTVectorStoreIndex, SimpleDirectoryReader, PromptHelper, LLMPredictor
 import openai
+import threading
 
+# Set OpenAI API key
+os.environ["OPENAI_API_KEY"] = "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"
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 documents = SimpleDirectoryReader('./data').load_data()
 
@@ -17,15 +21,17 @@ index = None
 
 @app.route("/")
 def index_get():
+    threading.Thread(target=initialize).start()
     script_root = request.script_root
     return render_template("index.html", script_root=script_root)
 
-@app.route("/initialize")
+# @app.route("/initialize")
 def initialize():
+    print("Index initialized")
     global llm_predictor, prompt_helper, index
     
     # Initialize llm_predictor
-    llm_predictor = LLMPredictor(llm=OpenAI(temperature=0.1, model_name="text-davinci-002"))
+    llm_predictor = LLMPredictor(llm=ChatOpenAI(temperature=0.1, model_name="ada-search-document"))
 
     # Initialize prompt_helper and index
     max_input_size = 4096
@@ -36,8 +42,6 @@ def initialize():
     
     # Store index in global scope
     globals()["index"] = index
-    print("Index initialized")
-    return "Initialization successful"
 
 @app.post("/predict")
 def predict():

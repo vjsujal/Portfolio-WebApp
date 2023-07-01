@@ -6,16 +6,16 @@ class Chatbox {
       sendButton: document.querySelector(".send__button"),
     };
     // Initialization
-    fetch($SCRIPT_ROOT + "/initialize")
-      .then(response => response.text())
-      .then(result => {
-        console.log(result);
-        // Call other methods or perform actions after initialization
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        // Handle error if initialization fails
-      });
+    // fetch($SCRIPT_ROOT + "/initialize")
+    //   .then(response => response.text())
+    //   .then(result => {
+    //     console.log(result);
+    //     // Call other methods or perform actions after initialization
+    //   })
+    //   .catch(error => {
+    //     console.error("Error:", error);
+    //     // Handle error if initialization fails
+    //   });
 
     this.state = false;
     this.message = [{ name: "Sam", message: "Hello, I'm AI Version of Sujal (Currently in Beta)! Ask me anything!"}];
