@@ -11,12 +11,12 @@
 =============== */
 .chatbox {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 30px;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
-    z-index: 123456;
+    z-index: -123456;
 }
 
 /* CONTENT IS CLOSE */
@@ -42,6 +42,11 @@
 /* BUTTON */
 .chatbox__button {
     text-align: right;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 123456;
+
 }
 
 .chatbox__button image{

@@ -1,6 +1,7 @@
 class Chatbox {
   constructor() {
     this.args = {
+      chatSection : document.querySelector(".chatbox"),
       openButton: document.querySelector(".chatbox__button"),
       chatBox: document.querySelector(".chatbox__support"),
       sendButton: document.querySelector(".send__button"),
@@ -27,8 +28,12 @@ class Chatbox {
     this.state = !this.state;
 
     if (this.state) {
+      // change the z-index of chatSection
+      this.args.chatSection.style.zIndex = 1000;
       chatBox.classList.add("chatbox--active");
     } else {
+      // change the z-index of chatSection
+      this.args.chatSection.style.zIndex = -123456;
       chatBox.classList.remove("chatbox--active");
     }
   }
