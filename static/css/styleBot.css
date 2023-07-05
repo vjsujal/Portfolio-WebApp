@@ -1,26 +1,5 @@
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-} */
-
-
-/* *, html {
-    --primaryGradient: linear-gradient(93.12deg, #581B98 0.52%, #9C1DE7 100%);
-    --secondaryGradient: linear-gradient(268.91deg, #581B98 -2.14%, #9C1DE7 99.69%);
-    --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-    --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
-    --primary: #581B98;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Kaushan Script:");
 
-.chatbox {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    z-index: 123456;
-}
 :root{
     --primary:#FFA500;
     --primaryGradient : #FFA500;
@@ -34,6 +13,10 @@
     position: fixed;
     bottom: 20px;
     right: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    z-index: 123456;
 }
 
 /* CONTENT IS CLOSE */
