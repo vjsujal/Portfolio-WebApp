@@ -6,6 +6,9 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -391,17 +394,18 @@
       </div>
 
       <div class="row">
-        <form action="https://formspree.io/f/xbjwzokb" method="POST">
-          <input name="Name" type="text" placeholder="name" class="box" />
-          <input name="Email" type="email" placeholder="email" class="box" />
+        <form  id="contact-form">
+          <input required name="Name" type="text" placeholder="name" class="box" />
+          <input required name="Email" type="email" placeholder="email" class="box" />
           <input
-            name="Phone Pumber"
+            name="Phone Number"
             type="number"
             placeholder="phone number"
             class="box"
           />
 
           <textarea
+            required
             name="Message"
             placeholder="message"
             id=""
@@ -416,6 +420,63 @@
             value="SEND MESSAGE"
           />
         </form>
+
+       <!-- Add the SweetAlert library to your HTML file -->
+
+       <script>
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting
+      
+          // Display the SweetAlert pop-up message
+          Swal.fire({
+            title: 'Thank you!',
+            text: 'Thank you for submitting the form!',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 3000,
+            customClass: {
+              popup: 'custom-swal-popup',
+              title: 'custom-swal-title',
+              content: 'custom-swal-content'
+            }
+          });
+      
+          // Reset the form fields
+          var formData = new FormData(this);
+          document.getElementById('contact-form').reset();
+      
+          // You can also send the form data to the server using AJAX if needed
+          // Example using Fetch API:
+          fetch('https://formspree.io/f/xleyeakl', {
+            method: 'POST',
+            body: formData
+          }).then(function(response) {
+            // Handle the response from the server if necessary
+          });
+        });
+      </script>
+      
+      <style>
+        /* Customize the SweetAlert pop-up box styles */
+        .custom-swal-popup {
+          background-color: #f2f2f2;
+        }
+      
+        .custom-swal-title {
+          color: #333;
+        }
+      
+        .custom-swal-content {
+          color: #555;
+        }
+      </style>
+      
+
+        
+
+
+
 
         <!-- <iframe
           class="map"
@@ -457,6 +518,9 @@
       </div>
     </section>
 
+      
+    
+
     <!-- contact section ends -->
 
     <!-- footer section  -->
@@ -497,6 +561,7 @@
 
     <!-- custom js file link  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    
     <script src="../static/js/typing.js"></script>
     <script src="../static/js/script.js"></script>
     <script>
