@@ -394,17 +394,18 @@
       </div>
 
       <div class="row">
-        <form  id="contact-form" action="https://formspree.io/f/xbjwzokb" method="POST">
-          <input name="Name" type="text" placeholder="name" class="box" />
-          <input name="Email" type="email" placeholder="email" class="box" />
+        <form  id="contact-form">
+          <input required name="Name" type="text" placeholder="name" class="box" />
+          <input required name="Email" type="email" placeholder="email" class="box" />
           <input
-            name="Phone Pumber"
+            name="Phone Number"
             type="number"
             placeholder="phone number"
             class="box"
           />
 
           <textarea
+            required
             name="Message"
             placeholder="message"
             id=""
@@ -442,12 +443,12 @@
           });
       
           // Reset the form fields
+          var formData = new FormData(this);
           document.getElementById('contact-form').reset();
       
           // You can also send the form data to the server using AJAX if needed
           // Example using Fetch API:
-          var formData = new FormData(this);
-          fetch('https://formspree.io/f/xbjwzokb', {
+          fetch('https://formspree.io/f/xleyeakl', {
             method: 'POST',
             body: formData
           }).then(function(response) {
