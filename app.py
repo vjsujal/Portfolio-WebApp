@@ -73,5 +73,4 @@ def predict():
       reply = "Something went wrong. Please try again."
     return jsonify({"answer": reply})
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
